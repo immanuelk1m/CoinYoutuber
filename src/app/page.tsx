@@ -15,7 +15,7 @@ const Page: React.FC = () => {
   const handleSearch = async (url: string) => {
     setLoading(true);
     try {
-      const response = await axios.post('http://34.121.27.232:5000/analyze', { video_url: url }, {timeout:10000});
+      const response = await axios.post('http://34.121.27.232:5000/analyze', { video_url: url }, {timeout:100000});
       let jsonData;
       if (typeof response.data === 'string') {
         jsonData = JSON.parse(response.data.replace(/NaN/g, 'null'));

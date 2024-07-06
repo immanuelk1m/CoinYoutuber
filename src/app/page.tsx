@@ -4,6 +4,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import Search from "@/components/component/search";
 import ResultTable from "@/components/component/result-table";
 import Spiner from "@/components/component/spiner";
+import Header from "@/components/component/header";
+import Footer from "@/components/component/footer";
+
 import axios from 'axios';
 import '@/app/globals.css';
 
@@ -39,6 +42,7 @@ const Page: React.FC = () => {
 
   return (
     <div>
+      <Header/>
       <Search onSearch={handleSearch} />
       {loading && (
         <div className="overlay">
@@ -50,6 +54,7 @@ const Page: React.FC = () => {
       <div ref={resultTableRef}>
         <ResultTable results={results} loading={loading} />
       </div>
+      <Footer/>
     </div>
   );
 }

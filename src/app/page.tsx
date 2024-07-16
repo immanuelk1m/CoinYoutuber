@@ -13,12 +13,14 @@ import '@/app/globals.css';
 const Page: React.FC = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState('coin'); // 새로운 상태 추가
   const resultTableRef = useRef<HTMLDivElement | null>(null);
 
   const handleSearch = async (url: string) => {
     setLoading(true);
+    const endpoint = activeTab === 'coin' ? 'http://34.121.27.232:5000/coin' : 'http://34.121.27.232:5000/stock';
     try {
-      const response = await axios.post('http://34.121.27.232:5000/analyze', { video_url: url }, {timeout:100000});
+      const response = await axios.post(endpoint, { video_url: url }, {timeout:100000});
       let jsonData;
       if (typeof response.data === 'string') {
         jsonData = JSON.parse(response.data.replace(/NaN/g, 'null'));
@@ -43,7 +45,7 @@ const Page: React.FC = () => {
   return (
     <div>
       <Header/>
-      <Search onSearch={handleSearch} />
+      <Search onSearch={handleSearch} activeTab={activeTab} setActiveTab={setActiveTab} />
       {loading && (
         <div className="overlay">
           <div className="spinner-container">

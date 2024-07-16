@@ -34,15 +34,9 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
         </div>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="coin">코인</TabsTrigger>
-            <TabsTrigger value="stock">미국주식</TabsTrigger>
+            <TabsTrigger value="coin">🪙코인 분석</TabsTrigger>
+            <TabsTrigger value="stock">📈미국주식</TabsTrigger>
           </TabsList>
-          <TabsContent value="coin">
-            <p className="text-sm text-center text-gray-500 mt-2">코인 관련 유튜브 영상을 분석합니다.</p>
-          </TabsContent>
-          <TabsContent value="stock">
-            <p className="text-sm text-center text-gray-500 mt-2">미국주식 관련 유튜브 영상을 분석합니다.</p>
-          </TabsContent>
         </Tabs>
         <div className="flex items-center bg-muted rounded-full px-4 py-2 space-x-2">
           <Input

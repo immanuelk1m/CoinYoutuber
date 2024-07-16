@@ -20,7 +20,7 @@ const Page: React.FC = () => {
     setLoading(true);
     const endpoint = activeTab === 'coin' ? 'http://34.121.27.232:5000/coin' : 'http://34.121.27.232:5000/stock';
     try {
-      const response = await axios.post(endpoint, { video_url: url }, {timeout:100000});
+      const response = await axios.post(endpoint, { video_url: url }, {timeout:1000000});
       let jsonData;
       if (typeof response.data === 'string') {
         jsonData = JSON.parse(response.data.replace(/NaN/g, 'null'));

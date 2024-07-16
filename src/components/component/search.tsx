@@ -23,7 +23,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
         <div className="text-center space-y-2">
           <h1 className="text-3xl font-bold mb-8">🚀 투자, 이제 유튜브 영상 분석으로! 📊</h1>
           <p className="text-sm text-gray-600">
-            복잡한 차트와 수많은 정보 속에서 헤매고 계신가요? 🤔
+            복잡한 차트와 수많은 유튜브 정보 속에서 헤매고 계신가요? 🤔
             <br />
             코인과 미국주식 추천 유튜브 영상을 분석해 드립니다! 🎥💡
             <br />
@@ -34,8 +34,18 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
         </div>
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="coin">🪙코인 분석</TabsTrigger>
-            <TabsTrigger value="stock">📈미국주식</TabsTrigger>
+            <TabsTrigger 
+              value="coin" 
+              className={`${activeTab === 'coin' ? 'bg-gray-100' : 'bg-white'} transition-colors duration-200`}
+            >
+              🪙코인 분석
+            </TabsTrigger>
+            <TabsTrigger 
+              value="stock" 
+              className={`${activeTab === 'stock' ? 'bg-gray-100' : 'bg-white'} transition-colors duration-200`}
+            >
+              📈미국주식
+            </TabsTrigger>
           </TabsList>
         </Tabs>
         <div className="flex items-center bg-muted rounded-full px-4 py-2 space-x-2">
@@ -50,7 +60,8 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           </Button>
         </div>
         <div className="text-sm text-center text-gray-500 space-y-1">
-          <p>서버 안정화를 위해 분석은 하루 검색 3회로 제한됩니다 ⏱️</p>
+          <p>분석에 30초에서 1분정도 소요됩니다 ⏱️</p>
+          <p>서버 안정화를 위해 분석은 하루 검색 3회로 제한됩니다 🧐</p>
           <p>최근 한 달 내의 영상 분석이 진행됩니다 📅</p>
         </div>
       </div>

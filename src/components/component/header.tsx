@@ -6,7 +6,7 @@ export default function Header() {
     <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
       <Link href="#" className="flex items-center gap-2" prefetch={false}>
         <CoinsIcon className="w-6 h-6" />
-        <span className="text-lg font-semibold">Youtube Coiner</span>
+        <span className="text-lg font-semibold">Spready</span>
       </Link>
       <nav className="hidden md:flex items-center gap-4">
         <Link href="#" className="hover:underline font-medium" prefetch={false}>

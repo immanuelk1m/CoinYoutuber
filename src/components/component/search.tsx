@@ -21,7 +21,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4">
       <div className="max-w-md w-full space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-3xl font-bold mb-8">🚀 투자, 이제 유튜브 영상 분석으로! 📊</h1>
+          <h1 className="text-3xl font-bold mb-8">투자, 이제 유튜브 영상 분석으로! 🚀</h1>
           <p className="text-sm text-gray-600">
             복잡한 차트와 수많은 유튜브 정보 속에서 헤매고 계신가요? 🤔
             <br />

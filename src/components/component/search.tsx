@@ -1,20 +1,22 @@
+import { useState } from 'react';
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 export default function Search({ onSearch, activeTab, setActiveTab }: { 
   onSearch: (url: string) => void, 
   activeTab: string, 
   setActiveTab: (tab: string) => void 
 }) {
-  let inputUrl = '';
+  const [inputUrl, setInputUrl] = useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    inputUrl = event.target.value;
+    setInputUrl(event.target.value); 
   };
 
   const handleClick = () => {
     onSearch(inputUrl);
+    setInputUrl('');
   };
 
   return (
@@ -52,6 +54,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           <Input
             type="text"
             placeholder="유튜브 영상 링크를 입력해주세요..."
+            value={inputUrl} // input 필드에 상태 연결
             onChange={handleChange}
             className="flex-1 bg-transparent focus:outline-none"
           />

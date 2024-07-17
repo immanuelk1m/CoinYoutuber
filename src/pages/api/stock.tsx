@@ -17,9 +17,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const response = await axios.post('http://34.22.90.37:5000/stock', req.body, {
         timeout: 900000
       });
+
       console.log('Response data:', response.data);
       res.status(200).json(response.data);
-    } catch (error: any) {
+    } 
+    catch (error: any) 
+    {
       console.error('Error fetching data:', error);
 
       if (error.code === 'ECONNABORTED') {

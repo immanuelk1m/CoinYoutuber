@@ -19,7 +19,7 @@ const Page: React.FC = () => {
 
   const handleSearch = async (url: string) => {
     setLoading(true);
-    const endpoint = activeTab === 'coin' ? '//34.22.90.37:5000/coin' : '//34.22.90.37:5000/stock';
+    const endpoint = activeTab === 'coin' ? 'https//34.22.90.37:5000/coin' : 'https//34.22.90.37:5000/stock';
     try {
       const response = await axios.post(endpoint, { video_url: url }, {timeout:1000000});
       let jsonData;
@@ -47,7 +47,7 @@ const Page: React.FC = () => {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        <title>Spready - 미국주식/코인 유튜브 분석</title>
+        <title>Spready</title>
         <meta name="description" content="This is an awesome application built with Next.js" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="유튜브 코인 추천 영상의 실제 수익률을 분석하여 불법 리딩과 사기를 방지하는 도구입니다. 투자 결정에 도움을 주는 객관적인 데이터를 제공합니다."></meta>

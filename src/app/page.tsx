@@ -28,7 +28,9 @@ const Page: React.FC = () => {
         body: JSON.stringify({ video_url: url }),
       });
 
-      if (!response.ok) {
+      if (!response.ok) 
+      {
+        console.log(response);
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 

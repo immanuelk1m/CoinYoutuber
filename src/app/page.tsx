@@ -34,7 +34,9 @@ const Page: React.FC = () => {
 
       const data = await response.json();
       setResults(data.results);
-    } catch (error) {
+    } 
+    catch (error) 
+    {
       console.error('Error fetching analysis results:', error);
     } finally {
       setLoading(false);

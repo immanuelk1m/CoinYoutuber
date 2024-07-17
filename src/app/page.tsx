@@ -7,6 +7,7 @@ import Spiner from "@/components/component/spiner";
 import Header from "@/components/component/header";
 import Footer from "@/components/component/footer";
 import Head from 'next/head';
+import axios from 'axios';
 
 import '@/app/globals.css';
 
@@ -24,26 +25,31 @@ const Page: React.FC = () => {
     setLoading(true);
     const endpoint = activeTab === 'coin' ? '/api/coin' : '/api/stock';
     try {
-      const response = await fetch(endpoint, {
-        method: 'POST',
+      const response = await axios.post(endpoint, { video_url: url }, {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ video_url: url }),
+        timeout: 300000 
       });
-      await wait(30000);
-      if (!response.ok) 
-      {
-        console.log(response);
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      setResults(data.results);
+      
+      setResults(response.data.results);
     } 
     catch (error) 
     {
-      console.error('Error fetching analysis results:', error);
+      if (axios.isAxiosError(error)) {
+        if (error.response) {
+
+          console.error('Error response status:', error.response.status);
+          console.error('Error response data:', error.response.data);
+        } else if (error.request) {
+
+          console.error('No response received:', error.request);
+        } else {
+          console.error('Error setting up the request:', error.message);
+        }
+      } else {
+        console.error('Error fetching analysis results:', error);
+      }
     } finally {
       setLoading(false);
     }

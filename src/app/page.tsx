@@ -19,7 +19,7 @@ const Page: React.FC = () => {
 
   const handleSearch = async (url: string) => {
     setLoading(true);
-    const endpoint = activeTab === 'coin' ? 'http://34.22.90.37:5000/coin' : 'http://34.22.90.37:5000/stock';
+    const endpoint = activeTab === 'coin' ? '/api/coin' : '/api/stock';
     try {
       const response = await axios.post(endpoint, { video_url: url }, {timeout:120000, withCredentials: true});
       let jsonData;

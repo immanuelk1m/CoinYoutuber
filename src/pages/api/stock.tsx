@@ -9,13 +9,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const videoUrl = req.body.video_url;
       const videoIdMatch = videoUrl.match(/(?:v=|\/)([0-9A-Za-z_-]{11}).*/);
 
-      if (!videoIdMatch) {
+      if (!videoIdMatch) 
+      {
         res.status(400).json({ error: 'Invalid video URL format' });
         return;
       }
 
       const response = await axios.post('http://34.22.90.37:5000/stock', req.body, {
-        timeout: 900000
+        timeout: 300000
       });
 
       console.log('Response data:', response.data);
@@ -25,24 +26,33 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     {
       console.error('Error fetching data:', error);
 
-      if (error.code === 'ECONNABORTED') {
+      if (error.code === 'ECONNABORTED') 
+      {
         console.error('Request timed out');
         res.status(504).json({ error: 'Request timed out' });
-      } else if (error.response) {
+      } 
+      else if (error.response) 
+      {
         console.error('Error response data:', error.response.data);
         console.error('Error response status:', error.response.status);
         console.error('Error response headers:', error.response.headers);
 
-        if (error.response.status === 504) {
+        if (error.response.status === 504) 
+        {
           res.status(504).json({ error: 'Gateway Timeout' });
-        } else {
+        } 
+        else 
+        {
           res.status(error.response.status).json(error.response.data);
         }
-      } else {
+      } 
+      else 
+      {
         res.status(500).json({ error: 'An error occurred while fetching data' });
       }
     }
-  } else {
+  } 
+  else {
     res.setHeader('Allow', ['POST']);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }

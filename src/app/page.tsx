@@ -10,6 +10,10 @@ import Head from 'next/head';
 
 import '@/app/globals.css';
 
+async function wait(ms:any) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 const Page: React.FC = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -27,7 +31,7 @@ const Page: React.FC = () => {
         },
         body: JSON.stringify({ video_url: url }),
       });
-
+      await wait(30000);
       if (!response.ok) 
       {
         console.log(response);

@@ -4,7 +4,7 @@ import axios from 'axios';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
-      const response = await axios.post('http://34.22.90.37:5000/stock', req.body, {
+      const response = await axios.post('http://34.22.90.37:5000/coin', req.body, {
         timeout: 120000
       });
       res.status(200).json(response.data);

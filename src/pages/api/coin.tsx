@@ -4,11 +4,14 @@ import axios from 'axios';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
     try {
+      console.log('Request body:', req.body);
       const response = await axios.post('http://34.22.90.37:5000/coin', req.body, {
         timeout: 120000
       });
+      console.log('Response data:', response.data);
       res.status(200).json(response.data);
     } catch (error) {
+      console.error('Error fetching data:', error);
       res.status(500).json({ error: 'An error occurred while fetching data' });
     }
   } else {

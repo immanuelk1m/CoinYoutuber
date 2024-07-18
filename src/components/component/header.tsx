@@ -1,30 +1,11 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-export default function Header() {
+export default function HeaderWithTopAd() {
   return (
     <>
-      <div>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7656508177587264"
-          crossOrigin="anonymous"
-        ></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-7656508177587264"
-          data-ad-slot="4862645834"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            `,
-          }}
-        />
+      <div className="bg-blue-500 text-center p-2">
+        
       </div>
       <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
         <Link href="#" className="flex items-center gap-2" prefetch={false}>
@@ -34,9 +15,6 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-4">
           <Link href="#" className="hover:underline font-medium" prefetch={false}>
             About
-          </Link>
-          <Link href="#" className="hover:underline font-medium" prefetch={false}>
-            Products
           </Link>
           <Link href="#" className="hover:underline font-medium" prefetch={false}>
             Contact
@@ -51,7 +29,7 @@ export default function Header() {
   );
 }
 
-function CoinsIcon(props: any) {
+function CoinsIcon(props:any) {
   return (
     <svg
       {...props}
@@ -73,7 +51,7 @@ function CoinsIcon(props: any) {
   );
 }
 
-function MenuIcon(props: any) {
+function MenuIcon(props:any) {
   return (
     <svg
       {...props}

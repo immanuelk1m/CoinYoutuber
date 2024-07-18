@@ -63,7 +63,7 @@ const Page: React.FC = () => {
 
   return (
     <>
-      <Head>
+      <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Spready</title>
         <meta name="description" content="유튜브 코인 추천 영상의 실제 수익률을 분석하여 불법 리딩과 사기를 방지하는 도구입니다. 투자 결정에 도움을 주는 객관적인 데이터를 제공합니다." />
@@ -80,7 +80,7 @@ const Page: React.FC = () => {
         <meta name="twitter:image" content="https://spready.kr/main.png" />
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7656508177587264" crossOrigin="anonymous"></script>
-      </Head>
+      </head>
       <Header />
       <Search onSearch={handleSearch} activeTab={activeTab} setActiveTab={setActiveTab} />
       {loading && (

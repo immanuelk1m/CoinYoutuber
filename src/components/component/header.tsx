@@ -1,7 +1,26 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 export default function Header() {
+  useEffect(() => {
+    // 구글 애드센스 스크립트를 추가합니다.
+    const script = document.createElement("script");
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+    script.async = true;
+    script.setAttribute("data-ad-client", "ca-pub-7656508177587264");
+    document.head.appendChild(script);
+
+    const adsScript = document.createElement("script");
+    adsScript.innerHTML = "(adsbygoogle = window.adsbygoogle || []).push({});";
+    document.head.appendChild(adsScript);
+
+    return () => {
+      document.head.removeChild(script);
+      document.head.removeChild(adsScript);
+    };
+  }, []);
+
   return (
     <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
       <Link href="#" className="flex items-center gap-2" prefetch={false}>
@@ -13,9 +32,6 @@ export default function Header() {
           About
         </Link>
         <Link href="#" className="hover:underline font-medium" prefetch={false}>
-          Products
-        </Link>
-        <Link href="#" className="hover:underline font-medium" prefetch={false}>
           Contact
         </Link>
       </nav>
@@ -23,11 +39,18 @@ export default function Header() {
         <MenuIcon className="w-5 h-5" />
         <span className="sr-only">Toggle Menu</span>
       </Button>
+      {/* 애드센스 광고 추가 */}
+      <ins className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client="ca-pub-7656508177587264"
+        data-ad-slot="4862645834"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
     </header>
   );
 }
 
-function CoinsIcon(props:any) {
+function CoinsIcon(props: any) {
   return (
     <svg
       {...props}
@@ -49,7 +72,7 @@ function CoinsIcon(props:any) {
   );
 }
 
-function MenuIcon(props:any) {
+function MenuIcon(props: any) {
   return (
     <svg
       {...props}

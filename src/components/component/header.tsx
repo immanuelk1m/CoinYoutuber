@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function HeaderWithTopAd() {
   return (
     <>
-      <div className="bg-blue-500 text-center p-2">
+      <div className="bg-red-500 text-center p-2">
         
       </div>
       <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">

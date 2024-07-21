@@ -1,18 +1,33 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
-import Link from 'next/link'
+import Link from 'next/link';
 
-const Ad = () => (
-  <div className="bg-red-500 text-white h-full transition-all duration-300">
-    <div className="max-w-7xl mx-auto h-full flex justify-between items-center px-4">
-      <div className="flex items-center">
-        {/* Ad content */}
-      </div>
+const Ad = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7656508177587264';
+    script.async = true;
+    script.crossOrigin = 'anonymous';
+    document.body.appendChild(script);
+
+    const adsbygoogle = document.createElement('script');
+    adsbygoogle.innerHTML = `
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    `;
+    document.body.appendChild(adsbygoogle);
+  }, []);
+
+  return (
+    <div className="flex items-center">
+      <ins className="adsbygoogle"
+           style={{ display: 'block' }}
+           data-ad-client="ca-pub-7656508177587264"
+           data-ad-slot="1773657493"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
     </div>
-  </div>
-);
-
-
+  );
+};
 
 const Header: React.FC = () => {
   const [adHeight, setAdHeight] = useState(320);
@@ -40,27 +55,25 @@ const Header: React.FC = () => {
 
   return (
     <>
-    <div style={{ height: `${adHeight}px`, overflow: 'hidden', transition: 'height 0.3s' }}>
-      <Ad />
-    </div>
-    <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
-    <Link href="#" className="flex items-center gap-2" prefetch={false}>
-      <CoinsIcon className="w-6 h-6" />
-      <span className="text-lg font-semibold">Spready</span>
-    </Link>
-    <nav className="hidden md:flex items-center gap-4">
-
-    </nav>
-
-  </header>
-  </>
+      <div style={{ height: `${adHeight}px`, overflow: 'hidden', transition: 'height 0.3s' }}>
+        <Ad />
+      </div>
+      <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
+        <Link href="#" className="flex items-center gap-2" prefetch={false}>
+          <CoinsIcon className="w-6 h-6" />
+          <span className="text-lg font-semibold">Spready</span>
+        </Link>
+        <nav className="hidden md:flex items-center gap-4">
+          {/* Navigation items */}
+        </nav>
+      </header>
+    </>
   );
 };
 
 export default Header;
 
-
-function CoinsIcon(props:any) {
+function CoinsIcon(props: any) {
   return (
     <svg
       {...props}
@@ -81,4 +94,3 @@ function CoinsIcon(props:any) {
     </svg>
   );
 }
-

@@ -3,17 +3,12 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
-      <p className="text-sm font-medium">&copy; 2024 Coiner. All rights reserved.</p>
+      <p className="text-sm font-medium">&copy; 2024 Spready. All rights reserved.</p>
       <div className="hidden md:flex items-center gap-4">
         <Link href="#" className="hover:underline font-medium" prefetch={false}>
-          Privacy Policy
+          ✉️ Mail : kse0119@naver.com
         </Link>
-        <Link href="#" className="hover:underline font-medium" prefetch={false}>
-          Terms of Service
-        </Link>
-        <Link href="#" className="hover:underline font-medium" prefetch={false}>
-          Contact Us
-        </Link>
+        
       </div>
     </footer>
   );

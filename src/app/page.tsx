@@ -6,7 +6,6 @@ import ResultTable from "@/components/component/result-table";
 import Spiner from "@/components/component/spiner";
 import Header from "@/components/component/header";
 import Footer from "@/components/component/footer";
-import Head from 'next/head';
 import axios from 'axios';
 
 import '@/app/globals.css';
@@ -81,6 +80,7 @@ const Page: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7656508177587264" crossOrigin="anonymous"></script>
       </head>
+      
       <Header />
       <Search onSearch={handleSearch} activeTab={activeTab} setActiveTab={setActiveTab} />
       {loading && (

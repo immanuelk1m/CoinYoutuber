@@ -7,7 +7,6 @@ function AdsenseOnfooter() {
                 client="ca-pub-7656508177587264"
                 slot="4411714536"
                 format="autorelaxed"
-                responsive="true"
                 style={{ display: 'block' }}
             />
         )

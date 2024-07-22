@@ -6,6 +6,8 @@ import ResultTable from "@/components/component/result-table";
 import Spiner from "@/components/component/spiner";
 import Header from "@/components/component/header";
 import Footer from "@/components/component/footer";
+import AdsenseOnfooter from "@/components/component/adsenseft";
+
 import axios from 'axios';
 
 import '@/app/globals.css';
@@ -79,6 +81,7 @@ const Page: React.FC = () => {
         <div ref={resultTableRef}>
           <ResultTable results={results} loading={loading} />
         </div>
+        <AdsenseOnfooter/>
       </div>
       <Footer />
     </>

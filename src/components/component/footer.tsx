@@ -8,7 +8,7 @@ export default function Footer() {
       <p className="text-sm font-medium">&copy; 2024 Spready. All rights reserved.</p>
       <div className="hidden md:flex items-center gap-4">
         <Link href="#" className="hover:underline font-medium" prefetch={false}>
-          ✉️ Mail : kse0119@naver.com
+          ✉️ Mail : puchahandsup12@gmail.com
         </Link>
         
       </div>

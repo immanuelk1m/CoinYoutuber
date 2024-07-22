@@ -76,13 +76,6 @@ const Page: React.FC = () => {
         </div>
         
       </div>
-      
-
-      <div>
-        <div>
-          
-        </div>
-      </div>
 
       <div className="justify-center" style={{ height: '180px' }}>
         <div>

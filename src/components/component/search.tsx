@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import "@/styles/fonts.css";
 
 export default function Search({ onSearch, activeTab, setActiveTab }: { 
   onSearch: (url: string) => void, 
@@ -25,9 +26,9 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
     <div className="flex flex-col items-center justify-center min-h-screen bg-background p-4">
       <div className="max-w-md w-full space-y-6">
         <div className="text-center space-y-2">
-          <h1 className="text-2xl font-bold mb-8">이제는 유튜브 분석으로 꼼꼼히 투자!!</h1>
+          <h1 className="text-2xl font-bold mb-8 font-pretendard">이제는 유튜브 분석으로 꼼꼼히 투자!!</h1>
 
-          <p className="text-sm text-gray-800">
+          <p className="text-sm text-gray-800 font-pretendard">
             수많은 유튜브 정보 속에서 아직도 헤매고 계신가요? 🤔
             <br />
             코인과 미국주식 추천 유튜브 영상을 분석해 드립니다! 🎥💡
@@ -65,7 +66,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
             분석하기
           </Button>
         </div>
-        <div className="text-sm text-center text-gray-500 space-y-1">
+        <div className="text-sm text-center text-gray-500 space-y-1 font-pretendard">
           <p>분석에 30초에서 1분정도 소요됩니다 ⏱️</p>
           <p>서버 안정화를 위해 분석은 하루 검색 3회로 제한됩니다 🧐</p>
           <p>최근 한 달 내의 영상 분석이 진행됩니다 📅</p>

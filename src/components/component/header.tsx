@@ -1,12 +1,15 @@
 'use client';
 
 import Link from 'next/link'
+import AdsenseOnheader from "@/components/component/adsensehd";
+
 
 const Header: React.FC = () => {
  
   return (
     <>
     <div className="bg-red-500" style={{ height: `${250}px`, overflow: 'hidden'}}>
+      <AdsenseOnheader/>
     </div>
     <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
     <Link href="#" className="flex items-center gap-2" prefetch={false}>

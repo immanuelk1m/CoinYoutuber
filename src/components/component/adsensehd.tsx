@@ -3,8 +3,7 @@ import { Adsense } from '@ctrl/react-adsense';
 
 function AdsenseOnheader() {
         return (
-            <Adsense
-                className='adsbygoogle'
+            <Adsense               
                 client="ca-pub-7656508177587264"
                 slot="1773657493"
                 format="auto"

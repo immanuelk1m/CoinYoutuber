@@ -70,16 +70,18 @@ const Page: React.FC = () => {
       </head>
       
       <Header />
-      <Search onSearch={handleSearch} activeTab={activeTab} setActiveTab={setActiveTab} />
-      {loading && (
-        <div className="overlay">
-          <div className="spinner-container">
-            <Spiner />
+      <div className="content-container">
+        <Search onSearch={handleSearch} activeTab={activeTab} setActiveTab={setActiveTab} />
+        {loading && (
+          <div className="overlay">
+            <div className="spinner-container">
+              <Spiner />
+            </div>
           </div>
+        )}
+        <div ref={resultTableRef}>
+          <ResultTable results={results} loading={loading} />
         </div>
-      )}
-      <div ref={resultTableRef}>
-        <ResultTable results={results} loading={loading} />
       </div>
       <Footer />
     </>

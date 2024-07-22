@@ -60,14 +60,7 @@ const Page: React.FC = () => {
   }, [results]);
 
   return (
-    <>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="twitter:image" content="https://spready.kr/main.png" />
-        <link rel="icon" href="/favicon.ico" />
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7656508177587264" crossOrigin="anonymous"></script>
-      </head>
-      
+    <>      
       <Header />
       <div className="content-container">
         <Search onSearch={handleSearch} activeTab={activeTab} setActiveTab={setActiveTab} />

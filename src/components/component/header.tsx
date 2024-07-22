@@ -8,7 +8,7 @@ const Header: React.FC = () => {
  
   return (
     <>
-    <div className="bg-red-500 flex justify-center items-center" style={{ height: `${250}px`, overflow: 'hidden'}}>
+    <div className="bg-red-500 flex justify-center" style={{ height: `${250}px`}}>
       <AdsenseOnheader/>
     </div>
     <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">

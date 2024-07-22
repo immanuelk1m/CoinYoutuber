@@ -49,6 +49,8 @@ export default function RootLayout({
         <meta name="twitter:title" content="코인 추천 유튜버 분석 도구" />
         <meta name="twitter:description" content="유튜브 코인 추천 영상의 실제 수익률을 분석하여 불법 리딩과 사기를 방지하는 도구입니다. 객관적인 데이터로 현명한 투자 결정을 도와드립니다." />
         <meta name="twitter:image" content="https://spready.kr/main.png" />
+                
+        
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7656508177587264" crossOrigin="anonymous"></script>
       </head>

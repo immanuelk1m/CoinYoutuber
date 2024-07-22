@@ -8,10 +8,14 @@ const Header: React.FC = () => {
  
   return (
     <>
-    <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
-      <div className="bg-red-500 justify-center" style={{ height: `${250}px`}}>
+    <div className="flex justify-center" style={{ height: '250px' }}>
+      <div className="bg-red-500">
         <AdsenseOnheader/>
       </div>
+    </div>
+
+    <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
+      
       <Link href="#" className="flex items-center gap-2" prefetch={false}>
         <CoinsIcon className="w-6 h-6" />
         <span className="text-lg font-semibold">Spready</span>

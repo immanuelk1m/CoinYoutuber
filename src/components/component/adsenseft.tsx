@@ -6,7 +6,6 @@ function AdsenseOnfooter() {
             <Adsense               
                 client="ca-pub-7656508177587264"
                 slot="4411714536"
-                format="autorelaxed"
                 style={{ display: 'block' }}
             />
         )

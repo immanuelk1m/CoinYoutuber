@@ -76,7 +76,10 @@ const Page: React.FC = () => {
         </div>
         
       </div>
-      <AdsenseOnfooter/>
+      
+      <div className="content-container">
+        <AdsenseOnfooter/>
+      </div>
       <Footer />
     </>
   );

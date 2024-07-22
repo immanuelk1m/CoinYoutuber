@@ -8,8 +8,8 @@ const Header: React.FC = () => {
  
   return (
     <>
-    <div className="bg-red-500" style={{ height: `${250}px`, overflow: 'hidden'}}>
-      <AdsenseOnheader/>
+    <div style={{ display: 'flex', justifyContent: 'center', backgroundColor: '#f00', height: '250px', overflow: 'hidden' }}>
+      <AdsenseOnheader />
     </div>
     <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
     <Link href="#" className="flex items-center gap-2" prefetch={false}>

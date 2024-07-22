@@ -8,7 +8,7 @@ const Header: React.FC = () => {
  
   return (
     <>
-    <div className="flex justify-center" style={{ height: '250px' }}>
+    <div className="justify-center" style={{ height: '260px' }}>
       <div className="bg-red-500">
         <AdsenseOnheader/>
       </div>

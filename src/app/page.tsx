@@ -10,9 +10,6 @@ import axios from 'axios';
 
 import '@/app/globals.css';
 
-async function wait(ms:any) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 const Page: React.FC = () => {
   const [results, setResults] = useState([]);

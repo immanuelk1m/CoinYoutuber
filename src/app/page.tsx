@@ -78,7 +78,7 @@ const Page: React.FC = () => {
       </div>
       
 
-      <div className="justify-center">
+      <div>
         <div>
           <AdsenseOnfooter/>
         </div>

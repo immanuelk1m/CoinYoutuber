@@ -74,8 +74,9 @@ const Page: React.FC = () => {
         <div ref={resultTableRef}>
           <ResultTable results={results} loading={loading} />
         </div>
-        <AdsenseOnfooter/>
+        
       </div>
+      <AdsenseOnfooter/>
       <Footer />
     </>
   );

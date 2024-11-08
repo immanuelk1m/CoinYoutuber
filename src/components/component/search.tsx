@@ -76,11 +76,12 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           {inputUrl && (
             <button 
               onClick={handleClear} 
-              className="absolute right-12 text-gray-500 hover:text-gray-700"
+              className="absolute right-16 text-gray-500 hover:text-gray-700"  // Adjusted `right` value
             >
               ✖
             </button>
           )}
+
           <button 
             onClick={handleClick} 
             disabled={isLoading || inputUrl === ''} 

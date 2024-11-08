@@ -32,7 +32,7 @@ export default function ResultTable({ results, loading, error }: ResultTableProp
         <div className="p-4">
             {loading && <div className="flex justify-center items-center"><div className="loader">Loading...</div></div>}
             {error && <div>{error}</div>} {/* error가 있을 때만 표시 */}
-            {!loading && !error && results.length === 0 && <div>No Data Available</div>}
+            {!loading && !error && results.length === 0 && <div></div>}
 
             {results.length > 0 && results.map((result, index) => (
                 <div key={index} className="mb-4">

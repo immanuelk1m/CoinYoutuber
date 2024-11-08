@@ -17,7 +17,7 @@ interface Result {
 interface ResultTableProps {
     results: Result[];
     loading: boolean;
-    error: string | null;
+    error?: string | null; // error를 선택적 속성으로 변경
 }
 
 function formatChangePercentage(value: number | null): string {
@@ -31,7 +31,7 @@ export default function ResultTable({ results, loading, error }: ResultTableProp
     return (
         <div className="p-4">
             {loading && <div className="flex justify-center items-center"><div className="loader">Loading...</div></div>}
-            {error && <div>{error}</div>}
+            {error && <div>{error}</div>} {/* error가 있을 때만 표시 */}
             {!loading && !error && results.length === 0 && <div>No Data Available</div>}
 
             {results.length > 0 && results.map((result, index) => (

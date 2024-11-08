@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         return;
       }
 
-      const response = await axios.post('http://34.22.90.37:5000/coin', req.body, {
+      const response = await axios.post('http://34.64.197.103:5000/coin', req.body, {
         timeout: 120000
       });
       console.log('Response data:', response.data);

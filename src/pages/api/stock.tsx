@@ -14,8 +14,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.status(400).json({ error: 'Invalid video URL format' });
         return;
       }
-
-      const response = await axios.post('http://34.22.90.37:5000/stock', req.body, {
+      
+      const response = await axios.post('http://34.64.197.103:5000/stock', req.body, {
         timeout: 300000
       });
 

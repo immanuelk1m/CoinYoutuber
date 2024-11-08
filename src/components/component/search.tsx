@@ -70,14 +70,8 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
             onChange={handleChange}
             className="flex-1 bg-transparent focus:outline-none px-2 py-1"
           />
-          {inputUrl && (
-            <button 
-              onClick={handleClear} 
-              className="absolute right-16 text-gray-500 hover:text-gray-700"
-            >
-              ✖
-            </button>
-          )}
+          {inputUrl 
+          }
           <button 
             onClick={handleClick} 
             disabled={isLoading || inputUrl === ''} 

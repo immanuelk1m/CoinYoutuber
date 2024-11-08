@@ -1,0 +1,2 @@
+/api/coin    http://34.64.197.103:5000/coin    200
+/api/stock   http://34.64.197.103:5000/stock   200

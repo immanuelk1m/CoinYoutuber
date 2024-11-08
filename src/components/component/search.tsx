@@ -1,6 +1,4 @@
-'use client';
-
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -34,7 +32,6 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
       <div className="max-w-md w-full space-y-6">
         <div className="text-center space-y-2">
           <h1 className="text-2xl font-bold mb-8 font-pretendard">이제는 유튜브 분석으로 꼼꼼히 투자!!</h1>
-
           <p className="text-sm text-gray-800 font-pretendard">
             수많은 유튜브 정보 속에서 아직도 헤매고 계신가요? 🤔
             <br />
@@ -76,12 +73,11 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           {inputUrl && (
             <button 
               onClick={handleClear} 
-              className="absolute right-12 text-gray-500 hover:text-gray-700" // Adjusted position
+              className="absolute right-16 text-gray-500 hover:text-gray-700"
             >
               ✖
             </button>
           )}
-
           <button 
             onClick={handleClick} 
             disabled={isLoading || inputUrl === ''} 

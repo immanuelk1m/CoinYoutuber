@@ -8,11 +8,11 @@ const Header: React.FC = () => {
  
   return (
     <>
-    <div className="justify-center" style={{ height: '80px' }}>
+    {/* <div className="justify-center" style={{ height: '80px' }}>
       <div className="bg-red-500">
         <AdsenseOnheader/>
       </div>
-    </div>
+    </div> */}
 
     <header className="bg-red-500 text-white py-4 px-6 flex items-center justify-between">
       

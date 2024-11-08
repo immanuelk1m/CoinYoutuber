@@ -22,7 +22,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
     setIsLoading(true);
     onSearch(inputUrl);
     setInputUrl('');
-    setTimeout(() => setIsLoading(false), 3000); // 로딩 효과를 위한 예시
+    setTimeout(() => setIsLoading(false), 3000); // Loading effect example
   };
 
   const handleClear = () => {
@@ -46,7 +46,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           </p>
         </div>
 
-        {/* 탭과 전환 애니메이션 */}
+        {/* Tabs with transition animation */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger 
@@ -64,7 +64,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           </TabsList>
         </Tabs>
 
-        {/* URL 입력 및 분석 버튼 */}
+        {/* URL input and analyze button */}
         <div className="flex items-center bg-muted rounded-full px-4 py-2 space-x-2 relative">
           <Input
             type="text"
@@ -76,7 +76,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           {inputUrl && (
             <button 
               onClick={handleClear} 
-              className="absolute right-16 text-gray-500 hover:text-gray-700"  // Adjusted `right` value
+              className="absolute right-12 text-gray-500 hover:text-gray-700" // Adjusted position
             >
               ✖
             </button>
@@ -95,7 +95,7 @@ export default function Search({ onSearch, activeTab, setActiveTab }: {
           </button>
         </div>
 
-        {/* 로딩 메시지 및 조건 설명 */}
+        {/* Loading message and instructions */}
         <div className="text-sm text-center text-gray-500 bg-gray-100 p-3 rounded-lg space-y-1 font-pretendard mt-4">
           <p>분석에 30초에서 1분 정도 소요됩니다 ⏱️</p>
           <p>서버 안정화를 위해 분석은 하루 검색 3회로 제한됩니다 🧐</p>

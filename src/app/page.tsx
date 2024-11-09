@@ -12,7 +12,6 @@ import axios from 'axios';
 
 import '@/app/globals.css';
 
-
 const Page: React.FC = () => {
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -22,13 +21,17 @@ const Page: React.FC = () => {
   const handleSearch = async (url: string) => {
     setLoading(true);
     const endpoint = activeTab === 'coin' ? '/api/coin' : '/api/stock';
+    
     try {
-      const response = await axios.post(endpoint, { video_url: url }, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        timeout: 300000 
-      });
+      const response = await axios.post(endpoint, 
+        { channel_url: url }, 
+        {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          timeout: 300000
+        }
+      );
       
       setResults(response.data.results);
     } 
@@ -36,11 +39,9 @@ const Page: React.FC = () => {
     {
       if (axios.isAxiosError(error)) {
         if (error.response) {
-
           console.error('Error response status:', error.response.status);
           console.error('Error response data:', error.response.data);
         } else if (error.request) {
-
           console.error('No response received:', error.request);
         } else {
           console.error('Error setting up the request:', error.message);
@@ -74,7 +75,6 @@ const Page: React.FC = () => {
         <div ref={resultTableRef}>
           <ResultTable results={results} loading={loading} />
         </div>
-        
       </div>
 
       <div className="justify-center" style={{ height: '180px' }}>
